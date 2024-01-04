@@ -1,0 +1,382 @@
+//======================================================================================================================
+// Components
+//======================================================================================================================
+
+//----------------------------------------------------------------------------------------------------------------------
+// Button Elements
+//----------------------------------------------------------------------------------------------------------------------
+%button-base {
+	@extend %fix-iOS-tap-highlight;
+	@extend %normal-non-focus-state-fx;
+	appearance : none;
+	cursor : pointer;
+	font-weight : 600;
+	line-height : 1.75;
+	display : block;
+	width : 100%;
+	padding : .5em 0;
+	border-radius : .375em;
+	border : 1px solid transparent;
+	transition : all 120ms;
+	transform: translate3d(0,0,0);
+	letter-spacing : .25px;
+	vertical-align : middle;
+
+	@include min-width($large) {
+		display : inline-block;
+		width : unset;
+		line-height : 1.25;
+		min-width : 6.25em;
+		padding : .5em .75em;
+	}
+
+	$_this-color: $default-txt-color;
+	$_this-bg : $default-bg-color;
+
+	background-color : $_this-bg;
+	color: $_this-color;
+
+	&:focus {
+		border-color : $primary-color !important;
+		@extend %focus-state-fx;
+	}
+	&:active {
+		transform: translate3d(0,1px,0);
+	}
+}
+
+#{$all-button-elements} {
+	@extend %button-base;
+	$_this-color: $default-txt-color;
+	$_this-bg : $default-bg-color;
+
+	background-color : $_this-bg;
+	color: $_this-color;
+
+	&:hover {
+		background-color : hover-color($_this-bg);
+	}
+	&:focus {
+		background-color : focus-color($_this-bg);
+	}
+	&:active {
+		background-color : active-color($_this-bg);
+	}
+
+	&.primary {
+		$_this-color: white;
+		$_this-bg : $primary-color;
+
+		background-color : $_this-bg;
+		color: $_this-color;
+		&:hover {
+			background-color : hover-color($_this-bg);
+		}
+		&:focus {
+			background-color : focus-color($_this-bg);
+		}
+		&:active {
+			background-color : active-color($_this-bg);
+		}
+	}
+	&.secondary {
+		$_this-color: white;
+		$_this-bg : $secondary-color;
+
+		background-color : $_this-bg;
+		color: $_this-color;
+		&:hover {
+			background-color : hover-color($_this-bg);
+		}
+		&:focus {
+			background-color : focus-color($_this-bg);
+		}
+		&:active {
+			background-color : active-color($_this-bg);
+		}
+	}
+	&.outline {
+		$_this-color: $default-txt-color;
+		$_this-bg : transparent;
+
+		border-color : $default-txt-color;
+		// border-width : 2px;
+		font-weight : 500;
+		letter-spacing : .5px;
+		background-color : $_this-bg;
+		color: $_this-color;
+		&:hover {
+			background-color : lighten($secondary-color, 70%);
+			border-color : hover-color($secondary-color);
+			color : hover-color($secondary-color);
+		}
+		&:focus {
+			background-color : lighten($secondary-color, 65%);
+			border-color : focus-color($_this-color);
+			color : focus-color($_this-color);
+		}
+		&:active {
+			background-color : lighten($secondary-color, 60%);
+			border-color : active-color($_this-bg);
+		}
+	}
+	&.round, &.rounded {
+		border-radius : 2em;
+		padding-left : 1.25em;
+		padding-right : 1.25em;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Skip-to-main Link
+//----------------------------------------------------------------------------------------------------------------------
+.skip-to-main {
+	position: absolute;
+	top: -3.5rem;
+	text-align : center;
+	font-weight: 500;
+	left: 10%;
+	right : 10%;
+	width : 80%;
+	// top : .5em;
+	border-radius : 2em;
+	// background: #000000;,
+	// background-color: #333333;
+	color: white;
+	padding: .75em 1.25em;
+	letter-spacing: .5px;
+
+	margin : 0 !important;
+	transition: all 150ms ease-out !important;
+	cursor: pointer;
+	appearance: none;
+	display: block;
+	background-color: $secondary-color;
+	// border: 2px solid $secondary-color;
+	border : 2px solid transparent;
+	text-decoration: none !important;
+	z-index: -100;
+	// transform: translate3d(0,-3.5rem, 0);
+	&::before {
+		all: unset !important;
+		margin : 0 !important;
+	}
+	&:hover {
+		text-decoration: none !important;
+		$_color: darken($secondary-color, 10%);
+		background-color: $_color;
+		border-color: $_color;
+		color: white;
+	}
+	&:focus {
+		text-decoration: none !important;
+		top: .5em;
+		transform: translate3d(0,0,0);
+		$_color: darken($secondary-color, 16%);
+		background-color: $_color;
+		border-color: $primary-color;
+		outline: none;
+		z-index: 2200;
+		box-shadow: 0 0 0 6px rgba($primary-color, 0.35);
+		color: white !important;
+	}
+	&:active {
+		text-decoration: none !important;
+		$_color: darken($secondary-color, 35%);
+		background-color: $_color;
+		border-color: $_color;
+	}
+	&:link, &:visited {
+		text-decoration: none !important;
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+
+	@include min-width($max-width) {
+		left : 0 !important;
+		right : unset !important;
+		border-radius: 0 3px 8px 0 !important;
+		margin : 0 !important;
+		// top : 0;
+		width : 13em !important;
+		text-align : center;
+
+		&:focus {
+			top : 0 !important;
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Form Elements and Inputs
+//----------------------------------------------------------------------------------------------------------------------
+form {
+
+}
+fieldset {
+
+}
+legend {
+
+}
+label {
+
+}
+#{$all-text-input-elements} {
+
+}
+
+[type='radio'], [type="checkbox"] {
+
+}
+[type="checkbox"] {
+
+}
+[type='radio'] {
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Navigation Bar
+//----------------------------------------------------------------------------------------------------------------------
+nav {
+	margin : 0;
+	padding : 0;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Navigation Menu
+//----------------------------------------------------------------------------------------------------------------------
+#navigation-list {
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Navigation Button
+//----------------------------------------------------------------------------------------------------------------------
+#navigation-button {
+	display : block;
+	width : unset;
+	padding : .5em 1.25em;
+	line-height : 1.5;
+	user-select : none;
+	border-radius : 2em;
+	background-color : $secondary-color;
+	position : absolute;
+	top : 1em;
+	right : 1em;
+	z-index : 100;
+
+	.navigation-button-text-content {
+		// @extend %sr-only;
+		color: white;
+	}
+
+	&[aria-expanded="true"] {
+		background-color : tomato;
+		color: white;
+		.navigation-button-text-content {
+			color: white;
+		}
+	}
+
+
+	@include min-width($large) {
+		display : none !important;
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+//
+//----------------------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------------------
+//
+//----------------------------------------------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Navigation Bar, List, etc. BELOW 768px...
+//----------------------------------------------------------------------------------------------------------------------
+@media screen and (max-width: 767px) {
+	body > header:first-of-type {
+		position : relative;
+	}
+	#primary-navigation {
+		transition : all 120ms;
+		background-color : $secondary-color;
+		color: white;
+	}
+	#navigation-list {
+		transition : all 120ms;
+		position: absolute;
+		li {
+			display : block;
+			width : auto;
+		}
+		* {
+			transition-delay: 100ms;
+			transition-duration: 200ms;
+			transition-property: all;
+			opacity : 0;
+		}
+		#{$all-link-elements} {
+			background-color : $secondary-color;
+			color: white;
+			transition-delay: 100ms;
+			transition-duration: 200ms;
+			transition-property: all;
+			width : 80% !important;
+			padding : 1.5em !important;
+			margin-left : auto;
+			margin-right : auto;
+			border-radius : 8em !important;
+			font-size : larger;
+			&:hover {
+				background-color : hover-color($secondary-color);
+			}
+			&:focus {
+				background-color : focus-color($secondary-color);
+			}
+			&:active {
+				background-color : active-color($secondary-color);
+			}
+			&[aria-current="page"] {
+				pointer-events: none !important;
+				background-color : darken($secondary-color, 10%);
+				color: rgba(white, 0.25);
+			}
+		}
+		&:not(.mobile-expanded) {
+			white-space: nowrap;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			border: 0;
+			padding: 0;
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			margin: -1px;
+		}
+		&.mobile-expanded {
+			z-index : 90;
+			gap: 0;
+			background-color : $secondary-color;
+			display : flex;
+			flex-direction : column;
+			justify-content : center;
+			opacity : 1;
+			height: 100vh;
+			min-height : 100vh;
+			left : 0;
+			right : 0;
+			top : 0;
+			bottom : 0;
+			* {
+				opacity : 1;
+			}
+		}
+	}
+}

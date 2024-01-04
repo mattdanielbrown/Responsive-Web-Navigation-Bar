@@ -1,0 +1,105 @@
+//======================================================================================================================
+// Variables
+//======================================================================================================================
+
+//----------------------------------------------------------------------------------------------------------------------
+// Typography
+//----------------------------------------------------------------------------------------------------------------------
+$system-fontstack: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Ubuntu","Cantarell","Noto Sans",
+									 sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$inter-fontstack : "Inter UI","Inter",Inter,Inter UI;
+$font-family     : $inter-fontstack,$system-fontstack !default;
+$fontstack       : $inter-fontstack,$system-fontstack !default;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Colors
+//----------------------------------------------------------------------------------------------------------------------
+
+/* Primitives */
+$blue : #601fff;
+
+$gray-07: #efefef;
+$gray-03: #343847;
+
+/* Theme */
+$primary-color: $blue;
+$action-color: $blue;
+$secondary-color: $gray-03;
+
+/* Assignments */
+$focus-state-fx-color-base: $action-color;
+$focus-state-fx-color: lighten($focus-state-fx-color-base, 30%);
+
+$default-bg-color   : $gray-07;
+$default-txt-color  : $gray-03;
+
+/* Util */
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Values
+//----------------------------------------------------------------------------------------------------------------------
+
+/* Sizes - Primitives */
+$x-small  : 24em;   // ( @16px = )
+$small    : 40em;   // ( @16px = 640px )
+$large    : 48em;   // ( @16px = 768px )
+
+/* Sizes - Assignments */
+$min-width : $x-small;
+$max-width : $large;
+
+/* Focus Effects */
+$focus-state-fx-outline-style     : solid;
+$focus-state-fx-outline-width     : 3px;
+$focus-state-fx-outline-color     : $focus-state-fx-color;
+$focus-state-fx-outilne           : $focus-state-fx-outline-style $focus-state-fx-outline-width $focus-state-fx-outline-color;
+$focus-state-fx-outline-offset    : 0;
+$normal-state--non-focus-outline  : solid 1px transparent;
+$normal-state--non-focus-outline-offset : 2px;
+
+//----------------------------------------------------------------------------------------------------------------------
+// Selector Groups
+//----------------------------------------------------------------------------------------------------------------------
+
+// Assignment Function
+@function _assign-inputs($inputs,$pseudo:null) {
+	$list: ();
+	@each $input in $inputs {
+		$input: unquote($input);
+		$input: if($pseudo, $input + ":" + $pseudo, $input);
+		$list: append($list, $input, comma);
+	}
+	@return $list;
+}
+
+// All Selectors
+$_all-selectors-list    : ("*", "*::before", "*::after");
+$all-selectors-group    : _assign-inputs($_all-selectors-list);
+
+// All Text-based Inputs
+$_text-inputs-list      : ("[type='color']","[type='date']",
+													"[type='datetime']",
+													"[type='datetime-local']","[type='email']",
+													"[type='month']","[type='number']",
+													"[type='password']",
+													"[type='search']","[type='tel']",
+													"[type='text']", "[type='time']",
+													"[type='url']", "[type='week']",
+													"input:not([type])", "textarea");
+$all-text-input-elements : _assign-inputs($_text-inputs-list);
+
+// All Button Elemlents
+$_button-elements-list    : ("button","[type='button']",
+														 "[type='submit']","[type='reset']",
+														 "[type='reset']","[role='button']",
+														 ".button");
+$all-button-elements      : _assign-inputs($_button-elements-list);
+
+// All Link (Anchor) Elements
+$_all-link-elements-list  : ("a","a:link","a:any-link","a:visited");
+$all-link-elements        : _assign-inputs($_all-link-elements-list);
+
+// All Heading Elements
+$_all-headings-list       : ("h1","h2","h3","h4","h5","h6");
+$all-heading-elements     : _assign-inputs($_all-headings-list);

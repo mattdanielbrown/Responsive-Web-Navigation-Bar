@@ -1,0 +1,84 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Responsive Web Navigation Bar</title>
+  <meta name="description" content="Responsive, accessible web navigation bar for desktop, tablet, and mobile screens.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Responsive Web Navigation Bar">
+  <meta property="og:type" content="text/html">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="css/main.scss">
+
+	<meta name="theme-color" content="#023FF5">
+</head>
+
+<body>
+	<!-- --| Skip-to-main-content link |------------------------------------------------------------------------------ -->
+	<!-- 	<a href="#main-content" class="skip-to-main" tabindex="1">Skip to main content</a> -->
+
+	<!-- ==| PAGE HEADER (INCLUDES PAGE/SITE NAVIGATION) |============================================================ -->
+	<header>
+		<nav id="primary-navigation" role="navigation">
+			<button id="navigation-button" type="button" aria-controls="navigation-list" aria-expanded="false">
+				<span class="navigation-button-text-content">Menu</span>
+			</button>
+			<ul id="navigation-list">
+				<li><a href="index.html" aria-current="page">Home</a></li>
+				<li><a href="#">Link</a></li>
+				<li><a href="#">Link</a></li>
+				<li><a href="#">Link</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- ==| MAIN PAGE CONTENT |====================================================================================== -->
+	<main id="main-content">
+
+		<section class="page-header">
+			<div>
+				<h1>
+					Website Title
+					<small>Page Title</small>
+				</h1>
+			</div>
+		</section>
+
+		<section>
+			<h2>Section Title</h2>
+			<h3>Subsection Title</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda blanditiis cupiditate ducimus,
+				explicabo maiores molestiae natus nulla numquam officiis praesentium rem repellat repudiandae sequi ut vel,
+				velit veritatis vitae!</p>
+
+			<ul class="buttons">
+				<li><button type="button">Default</button></li>
+				<li><button type="button" class="primary">Primary</button></li>
+				<li><button type="button" class="secondary">Secondary</button></li>
+				<li><button type="button" class="outline">Outline</button></li>
+				<li><button type="button" class="rounded">Rounded</button></li>
+			</ul>
+			<p>This is a <a href="#">link</a>.</p>
+		</section>
+	</main>
+
+	<!-- ==| PAGE FOOTER |============================================================================================ -->
+	<footer>
+		<p>Copyright &copy; 2023. All Rights Reserved.</p>
+	</footer>
+
+	<!-- ==| JAVASCRIPT |============================================================================================= -->
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+	<script src="js/navigation-bar.js"></script>
+</body>
+
+</html>

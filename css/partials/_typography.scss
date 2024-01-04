@@ -1,0 +1,98 @@
+//======================================================================================================================
+// Typography
+//======================================================================================================================
+
+html {
+	font-size : 112.5%;
+	line-height : 1;
+	font-weight : normal;
+	@extend %font-smoothing;
+}
+
+body {
+	font-size : 1rem;
+	line-height : 1;
+	font-weight : normal;
+}
+
+p {
+	line-height : 1.5;
+	font-family : inherit;
+	font-weight : normal;
+	margin : 0 auto 1.5em;
+	display : block;
+	width : 100%;
+}
+
+#{$all-heading-elements} {
+	font-weight : 600;
+	line-height : 1;
+	margin : 1rem auto 1rem;
+	display : block;
+	width : 100%;
+	small {
+		font-size : smaller;
+		display : block;
+		width : 100%;
+		line-height : 1;
+		margin : 1rem auto 1rem;
+	}
+}
+
+#{$all-button-elements} {
+	font-family : inherit;
+	line-height : 1.25;
+	font-weight : 600;
+	font-size : 1em;
+}
+
+#{$all-link-elements} {
+	font-family : inherit;
+	line-height : inherit;
+	display : inline-block;
+	font-weight : 500;
+	text-decoration : none;
+	$_this-color: $primary-color;
+	color: $_this-color;
+	cursor : pointer;
+	transition : all 200ms;
+	position : relative;
+	z-index : 1;
+	&::before {
+		content: "";
+		display : inline-block;
+		width : 120%;
+		height : 120%;
+		border-radius : .25em;
+		background-color : transparent;
+		position : absolute;
+		left : -10%;
+		top : 0;
+		right : 0;
+		bottom : 0;
+		z-index : 0;
+		opacity : 0.25;
+		padding : .5em;
+
+	}
+	@extend %normal-non-focus-state-fx;
+	&:hover {
+		color: hover-color($_this-color);
+	}
+	&:focus {
+		color: focus-color($_this-color);
+		@extend %focus-state-fx;
+		outline-color: $primary-color;
+		border-radius : .325em;
+		&::before {
+			background-color : $focus-state-fx-color;
+		}
+	}
+	&:active {
+		color: active-color($_this-color);
+	}
+}
+
+#{$all-text-input-elements} {
+
+}

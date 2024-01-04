@@ -1,0 +1,145 @@
+//======================================================================================================================
+// Placeholders and Utilities
+//======================================================================================================================
+
+//----------------------------------------------------------------------------------------------------------------------
+// Layout Container
+//----------------------------------------------------------------------------------------------------------------------
+//noinspection CssOverwrittenProperties
+%container {
+	margin-left : auto;
+	margin-right : auto;
+	width : 90%;
+	max-width : $max-width;
+	max-width : 65ch;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// List Reset
+//----------------------------------------------------------------------------------------------------------------------
+%list-reset {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	justify-content: flex-start;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	li {
+		display: block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		* {
+			margin: 0;
+		}
+	}
+	@media screen and (min-width: 600px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		li {
+			display: inline-flex;
+			width: unset;
+		}
+	}
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Font Smoothing/Antialiasing and Text Rendering
+//----------------------------------------------------------------------------------------------------------------------
+%font-smoothing {
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// Fix iOS-Tap-Highlighting
+//----------------------------------------------------------------------------------------------------------------------
+%fix-iOS-tap-highlight {
+	appearence                  : none !important;
+	-webkit-tap-highlight-color : rgba(0, 0, 0, 0.0) !important;
+	user-select                 : none !important;
+	-webkit-touch-callout       : none !important;
+}
+// @extend %fix-iOS-tap-highlight;
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// Screen-Reader Only / Visiblility / Hidden
+//----------------------------------------------------------------------------------------------------------------------
+%visually-hidden {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+%hidden-visually {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+%hide-visually {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+%sr-only {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+// :Focus State Effects
+//----------------------------------------------------------------------------------------------------------------------
+%normal-non-focus-state-fx {
+	outline       : $normal-state--non-focus-outline;
+	outline-offset: $normal-state--non-focus-outline-offset;
+}
+%focus-state-fx {
+	outline       : $focus-state-fx-outilne;
+	outline-offset: $focus-state-fx-outline-offset;
+}
+%add-focus-state-fx {
+	&:focus {
+		outline       : $focus-state-fx-outilne;
+		outline-offset: $focus-state-fx-outline-offset;
+	}
+}
+%apply-focus-state-fx {
+	&:focus {
+		outline       : $focus-state-fx-outilne;
+		outline-offset: $focus-state-fx-outline-offset;
+	}
+}
