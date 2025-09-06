@@ -24,7 +24,7 @@
     "sass": "^1.69.6"
   },
   "dependencies": {
-    "inter-ui": "^4.0.1",
+    "inter-ui": "^4.1.1",
     "modern-normalize": "^2.0.0",
     "sanitize.css": "^13.0.0"
   }

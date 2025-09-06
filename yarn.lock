@@ -1227,10 +1227,10 @@ import-fresh@^3.3.0:
     parent-module "^1.0.0"
     resolve-from "^4.0.0"
 
-inter-ui@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/inter-ui/-/inter-ui-4.0.1.tgz#6bf36222ac1701b53279b6290539dc4b0f752409"
-  integrity sha512-hg6LBzJIYSDDpEX45b4X90ieGh0CJ7XnaaXRt9zZS65y/fiW2WwAEyXArjToJJKFO8H6MSozLO2T35WVOhJFrg==
+inter-ui@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/inter-ui/-/inter-ui-4.1.1.tgz#8d7e800259caeb4293167564ddc2b12dbf2ba59d"
+  integrity sha512-451h0J29HyOmA+JXgSi/6M12tL7ZCZ8arYKZUXiOXTJpJbAKqJvFh3k5SiV3x7tKe0C0KyrKUUiQIvvZ2PQDcA==
 
 is-arrayish@^0.2.1:
   version "0.2.1"
