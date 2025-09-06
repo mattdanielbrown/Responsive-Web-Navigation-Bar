@@ -21,7 +21,7 @@
     "@parcel/transformer-webmanifest": "2.10.3",
     "parcel": "^2.10.3",
     "postcss": "^8.4.32",
-    "sass": "^1.69.6"
+    "sass": "^1.90.0"
   },
   "dependencies": {
     "inter-ui": "^4.0.1",
